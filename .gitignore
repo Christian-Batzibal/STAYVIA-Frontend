@@ -1,0 +1,6 @@
+build/
+ext/
+node_modules/
+.sencha/
+.DS_Store
+*.log

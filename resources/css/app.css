@@ -1,0 +1,401 @@
+/* === ESTILOS GENERALES === */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* === INDEX VIEW === */
+
+.link-text {
+    cursor: pointer;
+    margin-right: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.index-body {
+    background-image: url('../images/FondoIndex.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+
+    overflow: visible;        /* ✅ Esto permite que el logo sobresalga */
+    position: relative;       /* ✅ Necesario para que el z-index del logo funcione */
+    z-index: 1;               /* ✅ Más bajo que el logo (que está en zIndex: 5 o 100) */
+}
+
+
+.index-button {
+    background-color: rgba(200, 200, 200, 0.6);
+    border-radius: 10px;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.index-button:hover {
+    background-color: rgba(160, 160, 160, 0.7);
+}
+
+.index-search-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.index-search-button {
+    background-color: #4da6ff;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.index-search-button:hover {
+    background-color: #3399ff;
+}
+
+.index-title {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.index-footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.index-view {
+    height: 100vh !important;
+    width: 100vw !important;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* === ROOMS VIEW === */
+
+.rooms-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.rooms-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.rooms-date {
+    padding: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+}
+
+.rooms-section-title h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+    margin: 20px 0 10px;
+}
+
+/* === TARJETAS DE HABITACIONES === */
+
+.room-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.room-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 10px;
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.room-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.room-card-compact {
+    width: 200px;
+    margin: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+
+.room-card-compact:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.room-image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.photo-count {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.room-name {
+    font-weight: bold;
+    font-size: 16px;
+    color: #111;
+    margin: 6px 0 2px 0;
+}
+
+.room-location {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.room-rating {
+    font-size: 13px;
+    color: #111;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.rating-score {
+    background: #2ecc71;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.rating-text {
+    margin-left: 6px;
+    font-size: 12px;
+}
+
+.room-features ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.room-nonref {
+    color: red;
+    font-size: 12px;
+}
+
+.room-prices {
+    margin: 8px 0;
+}
+
+.discount {
+    background-color: #007E00;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.room-card-compact .old-price {
+    text-decoration: line-through;
+    color: gray;
+    margin-right: 5px;
+}
+
+.room-card-compact .new-price {
+    font-weight: bold;
+    font-size: 16px;
+    color: green;
+}
+
+.room-card-compact .rating-score {
+    background-color: #4caf50;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.total-price {
+    font-size: 12px;
+    color: gray;
+}
+
+.room-availability {
+    font-size: 12px;
+    color: red;
+}
+
+.room-reserve-btn {
+    background-color: #007bff !important;
+    color: #fff !important;
+    border-radius: 6px;
+    font-weight: bold;
+    padding: 6px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.title-hab {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.main-view-bg {
+    background-image: url('resources/images/FondoIndex.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+@media (max-width: 768px) {
+    .room-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+
+/* === VISTA DE OFERTAS === */
+
+.offer-card {
+    background: rgba(255, 255, 255, 0.85); /* semi-transparente */
+    border-radius: 15px; /* bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* sombra suave */
+    padding: 10px;
+}
+
+.section-title {
+    color: #fff;
+    text-align: center;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.offer-image {
+    width: 150px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.offer-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.offer-description {
+    font-size: 14px;
+    color: #666;
+}
+
+.reserve-btn {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+}
+
+
+/* === VISTA DE LOGIN === */
+
+.login-window .x-window-body {
+    background-image: url('../images/FondoLogin.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    padding: 0;
+}
+
+.login-form {
+    background-color: transparent;
+}
+
+.clean-field input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.login-button {
+    background-color: #bfbfbf !important;
+    color: white !important;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+}
+
+.forgot-password {
+    text-align: center;
+    color: #0039e6;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+/* === MODAL BUSQUEDA INDEX === */
+
+.search-item-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px 15px;
+    margin: 0 10px 0 0;
+    align-items: center;
+}
+
+.x-form-item .x-form-item-label {
+    font-weight: bold;
+}

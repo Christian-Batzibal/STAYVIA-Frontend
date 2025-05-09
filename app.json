@@ -1,0 +1,208 @@
+{
+    "name": "Nestly",
+    "namespace": "Nestly",
+    "version": "1.0.0.0",
+    "framework": "ext",
+
+    "requires": [
+        "font-awesome"
+    ],
+
+    "indexHtmlPath": "index.html",
+
+    
+    "classpath": [
+        "app",
+        "${toolkit.name}/src"
+    ],
+
+   
+    "overrides": [
+        "overrides",
+        "${toolkit.name}/overrides"
+    ],
+   
+    "fashion": {
+
+        "inliner": {
+           
+            "enable": false
+        }
+    },
+
+    "sass": {
+       
+        "namespace": "Nestly",
+       
+        "etc": [
+            "sass/etc/all.scss",
+            "${toolkit.name}/sass/etc/all.scss"
+        ],
+       
+        "var": [
+            "sass/var/all.scss",
+            "sass/var",
+            "${toolkit.name}/sass/var/all.scss",
+            "${toolkit.name}/sass/var"
+        ],
+       
+        "src": [
+            "sass/src",
+            "${toolkit.name}/sass/src"
+        ]
+    },
+   
+    "js": [
+        {
+            "path": "app.js",
+            "bundle": true
+        }
+    ],
+   
+    "classic": {
+        "js": [
+            {
+                "path": "${framework.dir}/build/ext-all-rtl-debug.js"
+            }
+        ]
+    }, 
+
+    "css": [
+        {
+           
+            "path": "${build.out.css.path}",
+            "bundle": true,
+            "exclude": ["fashion"]
+        }
+    ],
+
+   
+     "loader": {
+         
+         "cache": false,
+
+       
+         "cacheParam": "_dc"
+     },
+
+   
+    "production": {
+        "output": {
+            "appCache": {
+                "enable": false,
+                "path": "cache.appcache"
+            }
+        },
+        "loader": {
+            "cache": "${build.timestamp}"
+        },
+        "cache": {
+            "enable": true
+        },
+        "compressor": {
+            "type": "yui"
+        }
+    },
+
+    
+    "testing": {
+    },
+
+    
+    "development": {
+        "watch": {
+            "delay": 250
+        }
+    },
+
+  
+    "bootstrap": {
+        "base": "${app.dir}",
+
+        "manifest": "${build.id}.json",
+
+        "microloader": "bootstrap.js",
+        "css": "bootstrap.css"
+    },
+
+   
+
+    "output": {
+        "base": "${workspace.build.dir}/${build.environment}/${app.name}",
+        "page": "index.html",
+        "manifest": "${build.id}.json",
+        "js": "${build.id}/app.js",
+        "appCache": {
+            "enable": false
+        },
+        "resources": {
+            "path": "${build.id}/resources",
+            "shared": "resources"
+        }
+    },
+
+    
+
+    "cache": {
+        "enable": false,
+        "deltas": "${build.id}/deltas"
+    },
+
+   
+    "appCache": {
+       
+        "cache": [
+            "index.html"
+        ],
+        
+        "network": [
+            "*"
+        ],
+       
+        "fallback": []
+    },
+
+   
+  "resources": [
+  {
+    "path": "resources",
+    "output": "shared"
+  },
+  {
+    "path": "resources/images",
+    "output": "resources/images"
+  },
+  {
+    "path": "${toolkit.name}/resources"
+  },
+  {
+    "path": "${build.id}/resources"
+  }
+],
+    
+
+    "archivePath": "archive/${build.id}",
+
+   
+
+    "builds": {
+        "classic": {
+            "toolkit": "classic",
+            "theme": "theme-triton",
+            "sass": {
+                "generated": {
+                    "var": "classic/sass/save.scss",
+                    "src": "classic/sass/save"
+                }
+            }
+        }       
+    },
+
+   
+    "ignore": [
+        "(^|/)CVS(/?$|/.*?$)"
+    ],
+
+    
+    "id": "73e35433-6c57-42b0-87ad-7f8965ab0218"
+}
